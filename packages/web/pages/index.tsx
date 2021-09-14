@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
   const onAmountChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setAmount(Number(event.target.value))
-  } 
+  }
 
   return (
     <div className={styles.container}>
@@ -72,9 +72,18 @@ const Home: NextPage = () => {
         <div>
           <h1>{counter}</h1>
           <span>
-            <button type="button" onClick={() => dispatch(increment())}>+</button>
-            <button type="button" onClick={() => dispatch(decrement())}>-</button>
-            <input name="amount" type="number" onChange={onAmountChange} value={amount} />
+            <button type="button" onClick={() => dispatch(increment())}>
+              +
+            </button>
+            <button type="button" onClick={() => dispatch(decrement())}>
+              -
+            </button>
+            <input
+              name="amount"
+              type="number"
+              onChange={onAmountChange}
+              value={amount}
+            />
             <button
               type="submit"
               onClick={() => dispatch(incrementByAmount(amount))}
