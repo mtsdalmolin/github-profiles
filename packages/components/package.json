@@ -1,0 +1,8 @@
+{
+  "name": "@react-boilerplate/components",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "yarn lerna run storybook --scope web --stream"
+  }
+}
