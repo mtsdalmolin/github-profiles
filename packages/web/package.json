@@ -1,5 +1,5 @@
 {
-  "name": "@react-boilerplate/web",
+  "name": "@github-profiles/web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
-    "@react-boilerplate/components": "0.0.0",
-    "@react-boilerplate/store": "0.0.0",
+    "@github-profiles/components": "0.0.0",
+    "@github-profiles/store": "0.0.0",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",

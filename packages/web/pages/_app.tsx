@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
-import Provider from '@react-boilerplate/store/provider'
+import Provider from '@github-profiles/store/provider'
 
 import store from '../store'
 

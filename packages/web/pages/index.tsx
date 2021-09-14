@@ -9,7 +9,7 @@ import {
   increment,
   decrement,
   incrementByAmount
-} from '@react-boilerplate/store/slices/counter'
+} from '@github-profiles/store/slices/counter'
 
 import styles from '../styles/Home.module.css'
 

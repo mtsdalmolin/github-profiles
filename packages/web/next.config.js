@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const withTM = require('next-transpile-modules')([
-  '@react-boilerplate/components',
-  '@react-boilerplate/store'
+  '@github-profiles/components',
+  '@github-profiles/store'
 ]);
 
 module.exports = withTM({

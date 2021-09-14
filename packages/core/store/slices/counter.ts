@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '@react-boilerplate/web/store'
+import type { RootState } from '@github-profiles/web/store'
 
 // Define a type for the slice state
 interface CounterState {

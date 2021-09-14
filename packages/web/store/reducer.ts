@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import counter from '@react-boilerplate/store/slices/counter'
+import counter from '@github-profiles/store/slices/counter'
 
 const rootReducer = combineReducers({
   counter
