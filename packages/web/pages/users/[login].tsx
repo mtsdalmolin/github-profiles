@@ -2,6 +2,7 @@ import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ParsedUrlQuery } from 'querystring'
 import { useRouter } from 'next/dist/client/router'
 
@@ -64,15 +65,17 @@ const UserPage = ({ user }: UserPageProps) => {
           onChange={onLoginChange}
           value={login}
         />
-        <a href="/" title="Go to homepage">
-          <Image
-            className={styles.avatar}
-            src={user.avatar_url}
-            alt={user.name ?? user.login}
-            width={35}
-            height={35}
-          />
-        </a>
+        <Link href="/">
+          <a title="Go to homepage">
+            <Image
+              className={styles.avatar}
+              src={user.avatar_url}
+              alt={user.name ?? user.login}
+              width={35}
+              height={35}
+            />
+          </a>
+        </Link>
       </header>
 
       <main className={styles.main}>
@@ -101,11 +104,34 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { login } = params as GetStaticPropsParams
 
   const res = await fetch(`${process.env.API_URL}/users/${login}`)
-  const user = await res.json()
+  const {
+    id,
+    avatar_url,
+    html_url,
+    name,
+    email,
+    bio,
+    public_repos,
+    public_gists,
+    followers,
+    following
+  } = await res.json()
 
   return {
     props: {
-      user
+      user: {
+        login,
+        id,
+        avatar_url,
+        html_url,
+        name,
+        email,
+        bio,
+        public_repos,
+        public_gists,
+        followers,
+        following
+      }
     },
     revalidate: 10
   }

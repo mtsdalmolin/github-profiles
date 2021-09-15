@@ -43,7 +43,7 @@
 }
 
 .search::placeholder {
-  color: var(--bg-color-dark);
+  color: #eaeaea;
 }
 
 .title a {
@@ -92,11 +92,12 @@
   border: 1px solid #555454;
   border-radius: 10px;
   width: max-content;
+  max-height: 27vh;
+  overflow: auto;
 }
 
 @media (prefers-color-scheme: dark) {
   .search {
     border: 1px solid var(--bg-color-light);
-    color: var(--bg-color-light);
   }
 }

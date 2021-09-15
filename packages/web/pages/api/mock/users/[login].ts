@@ -6,9 +6,7 @@ import faker from 'faker'
 type ResponseDataType = {
   login: string | string[]
   id: number
-  node_id: string
   avatar_url: string
-  url: string
   html_url: string
   name: string
   email: string
@@ -26,9 +24,7 @@ export default function handler(
   res.status(200).json({
     login: req.query.login,
     id: faker.datatype.number(9999999),
-    node_id: faker.datatype.uuid(),
     avatar_url: faker.internet.avatar(),
-    url: faker.internet.url(),
     html_url: faker.internet.url(),
     name: faker.name.findName(),
     email: faker.internet.email(),

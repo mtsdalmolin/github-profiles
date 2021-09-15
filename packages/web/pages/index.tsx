@@ -1,6 +1,7 @@
 import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { useAppSelector } from '../store/hooks'
 import { selectUser } from '@github-profiles/store/slices/user'
@@ -20,13 +21,17 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Github Profiles {user?.name && `, ${user.name}`}
+          Welcome to Github Profiles {user?.name ?? user?.login ?? ''}
         </h1>
 
         {user?.login ? (
-          <a href={`/users/${user.login}`}>Go to my page</a>
+          <Link href={`/users/${user.login}`}>
+            <a>Go to my page</a>
+          </Link>
         ) : (
-          <a href={'/users/mtsdalmolin'}>Go to Matheus{"'"} page</a>
+          <Link href={'/users/mtsdalmolin'}>
+            <a>Go to Matheus{"'"} page</a>
+          </Link>
         )}
       </main>
     </div>
