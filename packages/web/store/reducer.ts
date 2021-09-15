@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import counter from '@github-profiles/store/slices/counter'
+import user from '@github-profiles/store/slices/user'
 
 const rootReducer = combineReducers({
-  counter
+  user
 })
 
 export default rootReducer
