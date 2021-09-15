@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  web:
+    image: node:14.16.0-alpine3.10
+    ports:
+      - "3000:3000"
+    build:
+      context: ./
+    volumes:
+      - ./:/web
+    container_name: "ghprofiles-web"
+    working_dir: "/web"
+    entrypoint: ["/bin/sh","-c"]
+    command:
+      - |
+        yarn lerna bootstrap
+        yarn lerna run dev --stream --scope @github-profiles/web
+
+  storybook:
+    image: node:14.16.0-alpine3.10
+    ports:
+      - "6006:6006"
+    build:
+      context: ./
+    volumes:
+      - ./:/storybook
+    container_name: "ghprofiles-storybook"
+    working_dir: "/storybook"
+    entrypoint: ["/bin/sh","-c"]
+    command:
+      - |
+        yarn lerna run storybook --stream --scope @github-profiles/web
+    depends_on:
+      - web
