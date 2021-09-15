@@ -1,0 +1,22 @@
+# Github Profiles
+
+## Getting start
+
+#### Clone and Install
+After cloning the repo, run:
+
+```sh
+$ yarn && yarn lerna bootstrap
+
+$ yarn lerna run dev --stream --scope @github-profiles/web
+```
+
+Running with docker:
+
+```sh
+$ yarn
+
+$docker-compose up web
+```
+
+If you want to instantiate storybook container as well, just remove `web` parameter from docker-compose command.
